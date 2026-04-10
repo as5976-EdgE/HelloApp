@@ -3,19 +3,22 @@ public class HelloApp {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            // StringBuilder is more efficient for joining many strings
-            StringBuilder names = new StringBuilder();
+            StringBuilder nameBuilder = new StringBuilder();
             
-            // Enhanced For Loop: iterates through every String in the args array
+            // Step 1: Append every name followed by the delimiter
             for (String name : args) {
-                // Add a comma and space before adding the next name (except for the first one)
-                if (names.length() > 0) {
-                    names.append(", ");
-                }
-                names.append(name);
+                nameBuilder.append(name).append(", ");
             }
             
-            System.out.println("Hello, " + names.toString() + "!");
+            // Step 2: Extract the final string
+            String finalNames = nameBuilder.toString();
+            
+            // Step 3: Remove the trailing ", " (last 2 characters)
+            if (finalNames.length() > 0) {
+                finalNames = finalNames.substring(0, finalNames.length() - 2);
+            }
+            
+            System.out.println("Hello, " + finalNames + "!");
         }
     }
 }

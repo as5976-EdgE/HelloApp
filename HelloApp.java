@@ -1,24 +1,14 @@
 public class HelloApp {
     public static void main(String[] args) {
+        // Step 1: Check if arguments are provided
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            StringBuilder nameBuilder = new StringBuilder();
+            // Step 2: Use String.join to combine all args with a comma-space delimiter
+            // This automatically handles the "no trailing delimiter" logic for you!
+            String names = String.join(", ", args);
             
-            // Step 1: Append every name followed by the delimiter
-            for (String name : args) {
-                nameBuilder.append(name).append(", ");
-            }
-            
-            // Step 2: Extract the final string
-            String finalNames = nameBuilder.toString();
-            
-            // Step 3: Remove the trailing ", " (last 2 characters)
-            if (finalNames.length() > 0) {
-                finalNames = finalNames.substring(0, finalNames.length() - 2);
-            }
-            
-            System.out.println("Hello, " + finalNames + "!");
+            System.out.println("Hello, " + names + "!");
         }
     }
 }

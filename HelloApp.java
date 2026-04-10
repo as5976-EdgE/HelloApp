@@ -1,6 +1,7 @@
 public class HelloApp {
     public static void main(String[] args) {
-        // Check if length is greater than 0. If yes, use args[0]. If no, use "World".
+        // UC3: Use Ternary operator to check if an argument exists.
+        // If args.length > 0, use args[0]; otherwise, default to "World".
         String name = (args.length > 0) ? args[0] : "World";
         
         System.out.println("Hello, " + name + "!");
